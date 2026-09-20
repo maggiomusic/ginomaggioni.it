@@ -359,6 +359,24 @@ a { color: inherit; }
   transition: transform 0.5s ease;
 }
 
+.grid--pages {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.grid--pages .grid__item {
+  aspect-ratio: 4 / 5;
+}
+
+.grid--pages .grid__item img {
+  object-fit: contain;
+}
+
+.source-note {
+  margin: 28px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
 .grid__item:hover img {
   transform: scale(1.06);
 }

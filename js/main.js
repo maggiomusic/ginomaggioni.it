@@ -13,6 +13,23 @@
         "1770551469671858.jpg"
       ]
     },
+    "grid-borsani": {
+      folder: "media/Borsani_Maggioni_web",
+      title: "Atelier di Varedo, dal libro «Osvaldo Borsani» (Leonardo – De Luca, 1992)",
+      files: [
+        "img_borsani_maggioni1.jpg",
+        "img_borsani_maggioni2.jpg",
+        "img_borsani_maggioni3.jpg",
+        "img_borsani_maggioni3a.jpg",
+        "img_borsani_maggioni4.jpg",
+        "img_borsani_maggioni5.jpg",
+        "img_borsani_maggioni6.jpg",
+        "img_borsani_maggioni7.jpg",
+        "img_borsani_maggioni8.jpg",
+        "img_borsani_maggioni9.jpg",
+        "img_borsani_maggioni10.jpg"
+      ]
+    },
     "grid-brevetto": {
       folder: "media/BrevettoCurvatiMaggioni",
       title: "Brevetto Curvati Maggioni",
