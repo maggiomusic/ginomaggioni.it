@@ -205,7 +205,9 @@
       if (!grid) return;
 
       gallery.files.forEach(function (file) {
-        var src = encodeURI(file.indexOf("/") >= 0 ? file : gallery.folder + "/" + file);
+        var rel = (file.indexOf("/") >= 0 ? file : gallery.folder + "/" + file).replace(/^media\//, "");
+        var src = encodeURI("media-web/l/" + rel);
+        var thumb = encodeURI("media-web/t/" + rel);
         var index = allImages.length;
         var caption = captionFor(file);
         allImages.push({ src: src, title: gallery.title, caption: caption });
@@ -215,7 +217,7 @@
         item.setAttribute("data-index", index);
 
         var img = document.createElement("img");
-        img.src = src;
+        img.src = thumb;
         img.alt = caption || gallery.title;
         img.loading = "lazy";
 
