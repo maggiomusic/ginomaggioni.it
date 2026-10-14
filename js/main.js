@@ -18,7 +18,8 @@
         "017 bis.jpg",
         "Carrello.JPG",
         "Ciotola tornita 1.JPG",
-        "Madonna  anni 30.JPG",
+        "Logo PAM terrecotte Diano Marina.JPG": "Logo PAM, terrecotte \u2013 Diano Marina",
+    "Madonna  anni 30.JPG",
         "Mobili con decorazioni incise- Biennale Monza 1925- Progetto arch. Maggioni.JPG",
         "Vassoio in legno curvato 003.JPG"
       ]
@@ -144,7 +145,7 @@
         "036.JPG",
         "037.JPG",
         "DSCN0680 bis.jpg",
-        "Logo Progetto AttivitÂ… Moderne.JPG",
+        "Logo PAM terrecotte Diano Marina.JPG",
         "cappella di famglia a S.giorgio S.L..JPG",
         "logo del primo biglietto da visita.jpg",
         "podere_La_Pace_10203.jpg",
@@ -189,7 +190,7 @@
   function captionFor(file) {
     var name = file.split("/").pop();
     if (CAPTION_FIXES[name]) return CAPTION_FIXES[name];
-    if (name.indexOf("Logo Progetto") === 0) return "Logo PAM, terrecotte \u2013 Diano Marina";
+    if (name.indexOf("Logo PAM terrecotte Diano Marina.JPG") === 0) return "Logo PAM, terrecotte \u2013 Diano Marina";
     var base = name.replace(/\.[^.]+$/, "");
     if (/^(DSCN)?\d+(\s*bis)?$/i.test(base) || /^img_/.test(base) || /^\d{6,}$/.test(base)) return "";
     base = base.replace(/\s*\(\d+\)\s*/g, " ").replace(/\s+\d+$/, "").replace(/\s+/g, " ").trim();
