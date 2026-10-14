@@ -18,8 +18,7 @@
         "017 bis.jpg",
         "Carrello.JPG",
         "Ciotola tornita 1.JPG",
-        "Logo PAM terrecotte Diano Marina.JPG": "Logo PAM, terrecotte \u2013 Diano Marina",
-    "Madonna  anni 30.JPG",
+        "Madonna  anni 30.JPG",
         "Mobili con decorazioni incise- Biennale Monza 1925- Progetto arch. Maggioni.JPG",
         "Vassoio in legno curvato 003.JPG"
       ]
@@ -178,6 +177,7 @@
     "biglietto_fiera_mobilio_1939.jpg": "Volantino del Padiglione Mobilio, XX Fiera di Milano, 1939",
     "cappella di famglia a S.giorgio S.L..JPG": "Cappella di famiglia a San Giorgio su Legnano",
     "ENTRATA CAPPELLA S.GIORGIO.JPG": "Ingresso della cappella di famiglia, San Giorgio su Legnano",
+    "Logo PAM terrecotte Diano Marina.JPG": "Logo PAM, terrecotte – Diano Marina",
     "Madonna  anni 30.JPG": "Madonna, anni Trenta",
     "Mobili con decorazioni incise- Biennale Monza 1925- Progetto arch. Maggioni.JPG": "Mobili con decorazioni incise, Biennale di Monza 1925",
     "Pittore Casati 1 (caricatura).JPG": "Il pittore Casati (caricatura)",
@@ -190,7 +190,6 @@
   function captionFor(file) {
     var name = file.split("/").pop();
     if (CAPTION_FIXES[name]) return CAPTION_FIXES[name];
-    if (name.indexOf("Logo PAM terrecotte Diano Marina.JPG") === 0) return "Logo PAM, terrecotte \u2013 Diano Marina";
     var base = name.replace(/\.[^.]+$/, "");
     if (/^(DSCN)?\d+(\s*bis)?$/i.test(base) || /^img_/.test(base) || /^\d{6,}$/.test(base)) return "";
     base = base.replace(/\s*\(\d+\)\s*/g, " ").replace(/\s+\d+$/, "").replace(/\s+/g, " ").trim();
