@@ -472,7 +472,8 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 4px;
+  vertical-align: middle;
   color: var(--rust);
 }
 
