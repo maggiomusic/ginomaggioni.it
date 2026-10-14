@@ -10,7 +10,17 @@
         "1770550369671968.jpg",
         "1770551246338547.jpg",
         "1770551386338533.jpg",
-        "1770551469671858.jpg"
+        "1770551469671858.jpg",
+        "007.JPG",
+        "009 bis.jpg",
+        "012.JPG",
+        "013 bis.jpg",
+        "017 bis.jpg",
+        "Carrello.JPG",
+        "Ciotola tornita 1.JPG",
+        "Madonna  anni 30.JPG",
+        "Mobili con decorazioni incise- Biennale Monza 1925- Progetto arch. Maggioni.JPG",
+        "Vassoio in legno curvato 003.JPG"
       ]
     },
     "grid-borsani": {
@@ -75,7 +85,38 @@
         "1770548163005522.jpg",
         "1771113489615656.jpg",
         "1771113936282278.jpg",
-        "1771114196282252.jpg"
+        "1771114196282252.jpg",
+        "Bassorilievo inciso illuminato con guida d'onda nello spessore del cristallo.JPG",
+        "DSCN0824.JPG",
+        "Maschera di creta (1).JPG",
+        "Maschere caricaturali.JPG",
+        "Pesce (incisione in bassorilievo).JPG",
+        "Pittore Casati 1 (caricatura).JPG",
+        "Prode Anselmo 1.JPG",
+        "Ragazza con treccia (pietra).JPG",
+        "Tre maschere (2).JPG",
+        "Venere 4.JPG",
+        "ragazza col velo (pietra).JPG"
+      ]
+    },
+    "grid-zoo": {
+      folder: "media/zoo di piombo",
+      title: "Zoo di piombo",
+      files: [
+        "Angelo della roccia  (2).JPG",
+        "Angelo della roccia (4).JPG",
+        "Angelo della roccia (6).JPG",
+        "Angelo dells roccia (5).JPG",
+        "DSCN0661.JPG",
+        "DSCN0667.JPG",
+        "DSCN0668.JPG",
+        "DSCN0669.JPG",
+        "DSCN0670.JPG",
+        "DSCN0671.JPG",
+        "DSCN0672.JPG",
+        "DSCN0673.JPG",
+        "Studio di testa (3) piombo.JPG",
+        "Uomo seduto (1) piombo.JPG"
       ]
     },
     "grid-disegni": {
@@ -90,7 +131,25 @@
         "1771109276282744.jpg",
         "1771109579616047.jpg",
         "1771109759616029.jpg",
-        "1771110519615953.jpg"
+        "1771110519615953.jpg",
+        "015 bis.jpg",
+        "016 bis.jpg",
+        "020 bis.jpg",
+        "022 bis.jpg",
+        "023.JPG",
+        "028.JPG",
+        "030.JPG",
+        "031.JPG",
+        "033.JPG",
+        "036.JPG",
+        "037.JPG",
+        "DSCN0680 bis.jpg",
+        "Logo Progetto AttivitÂ… Moderne.JPG",
+        "cappella di famglia a S.giorgio S.L..JPG",
+        "logo del primo biglietto da visita.jpg",
+        "podere_La_Pace_10203.jpg",
+        "podere_La_Pace_20204.jpg",
+        "media/Foto varie/ENTRATA CAPPELLA S.GIORGIO.JPG"
       ]
     },
     "grid-nido": {
@@ -113,6 +172,30 @@
     }
   };
 
+  var CAPTION_FIXES = {
+    "Angelo dells roccia (5).JPG": "Angelo della roccia",
+    "biglietto_fiera_mobilio_1939.jpg": "Volantino del Padiglione Mobilio, XX Fiera di Milano, 1939",
+    "cappella di famglia a S.giorgio S.L..JPG": "Cappella di famiglia a San Giorgio su Legnano",
+    "ENTRATA CAPPELLA S.GIORGIO.JPG": "Ingresso della cappella di famiglia, San Giorgio su Legnano",
+    "Madonna  anni 30.JPG": "Madonna, anni Trenta",
+    "Mobili con decorazioni incise- Biennale Monza 1925- Progetto arch. Maggioni.JPG": "Mobili con decorazioni incise, Biennale di Monza 1925",
+    "Pittore Casati 1 (caricatura).JPG": "Il pittore Casati (caricatura)",
+    "Studio di testa (3) piombo.JPG": "Studio di testa",
+    "Uomo seduto (1) piombo.JPG": "Uomo seduto",
+    "podere_La_Pace_10203.jpg": "Podere la Pace",
+    "podere_La_Pace_20204.jpg": "Podere la Pace"
+  };
+
+  function captionFor(file) {
+    var name = file.split("/").pop();
+    if (CAPTION_FIXES[name]) return CAPTION_FIXES[name];
+    if (name.indexOf("Logo Progetto") === 0) return "Logo PAM, terrecotte \u2013 Diano Marina";
+    var base = name.replace(/\.[^.]+$/, "");
+    if (/^(DSCN)?\d+(\s*bis)?$/i.test(base) || /^img_/.test(base) || /^\d{6,}$/.test(base)) return "";
+    base = base.replace(/\s*\(\d+\)\s*/g, " ").replace(/\s+\d+$/, "").replace(/\s+/g, " ").trim();
+    return base.charAt(0).toUpperCase() + base.slice(1);
+  }
+
   var allImages = [];
 
   function buildGrids() {
@@ -124,7 +207,8 @@
       gallery.files.forEach(function (file) {
         var src = encodeURI(file.indexOf("/") >= 0 ? file : gallery.folder + "/" + file);
         var index = allImages.length;
-        allImages.push({ src: src, title: gallery.title });
+        var caption = captionFor(file);
+        allImages.push({ src: src, title: gallery.title, caption: caption });
 
         var item = document.createElement("div");
         item.className = "grid__item";
@@ -132,7 +216,7 @@
 
         var img = document.createElement("img");
         img.src = src;
-        img.alt = gallery.title;
+        img.alt = caption || gallery.title;
         img.loading = "lazy";
 
         item.appendChild(img);
@@ -165,7 +249,7 @@
     var item = allImages[currentIndex];
     lightboxImg.src = item.src;
     lightboxImg.alt = item.title;
-    lightboxCaption.textContent = item.title + " — " + (currentIndex + 1) + " / " + allImages.length;
+    lightboxCaption.textContent = (item.caption ? item.caption + " · " : "") + item.title + " — " + (currentIndex + 1) + " / " + allImages.length;
   }
 
   function showNext() {
