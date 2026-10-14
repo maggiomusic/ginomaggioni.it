@@ -24,20 +24,20 @@
       ]
     },
     "grid-borsani": {
-      folder: "media/Borsani_Maggioni_web",
+      folder: "media/Borsani_Maggioni",
       title: "Atelier di Varedo, dal libro «Osvaldo Borsani» (Leonardo – De Luca, 1992)",
       files: [
-        "img_borsani_maggioni1.jpg",
-        "img_borsani_maggioni2.jpg",
-        "img_borsani_maggioni3.jpg",
+        "img_borsani_maggioni1.JPG",
+        "img_borsani_maggioni2.JPG",
+        "img_borsani_maggioni3.JPG",
         "img_borsani_maggioni3a.jpg",
-        "img_borsani_maggioni4.jpg",
-        "img_borsani_maggioni5.jpg",
-        "img_borsani_maggioni6.jpg",
-        "img_borsani_maggioni7.jpg",
-        "img_borsani_maggioni8.jpg",
-        "img_borsani_maggioni9.jpg",
-        "img_borsani_maggioni10.jpg"
+        "img_borsani_maggioni4.JPG",
+        "img_borsani_maggioni5.JPG",
+        "img_borsani_maggioni6.JPG",
+        "img_borsani_maggioni7.JPG",
+        "img_borsani_maggioni8.JPG",
+        "img_borsani_maggioni9.JPG",
+        "img_borsani_maggioni10.JPG"
       ]
     },
     "grid-brevetto": {
@@ -57,7 +57,7 @@
       ]
     },
     "grid-sculture": {
-      folder: "media/Sculture_1770538639673141",
+      folder: "media/Sculture",
       title: "Sculture",
       files: [
         "1770538889673116.jpg",
