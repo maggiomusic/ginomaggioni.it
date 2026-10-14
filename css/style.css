@@ -471,13 +471,12 @@ a { color: inherit; }
 .footer__mail {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  padding: 8px;
   color: var(--rust);
-  text-decoration: none;
-  font-weight: 500;
 }
 
-.footer__mail:hover { color: var(--rust-dark); text-decoration: underline; }
+.footer__mail:hover { color: var(--rust-dark); }
 
 /* Responsive */
 
